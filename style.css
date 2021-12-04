@@ -33,3 +33,20 @@ body {
   background-color: #c59d5f;
   margin: 1rem auto;
 }
+#buttons {
+  width: 45%;
+  margin: 0 auto;
+}
+.button-value {
+  margin-left: 1rem;
+  border: 2px solid #c59d5f;
+  padding: 1em 1.8em;
+  border-radius: 0.5em;
+  background-color: transparent;
+  color: #c59d5f;
+  cursor: pointer;
+}
+.active {
+  background-color: #c59d5f;
+  color: white;
+}
