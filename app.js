@@ -72,3 +72,38 @@ let products = {
     },
   ],
 };
+
+for (let i of products.data) {
+  //create card
+  let card = document.createElement("div");
+  card.classList.add("card", i.category);
+  // image div
+  let imgContainer = document.createElement("div");
+  imgContainer.classList.add("img-container");
+  //img tag
+  let image = document.createElement("img");
+  image.setAttribute("src", i.image);
+  imgContainer.appendChild(image);
+  card.appendChild(imgContainer);
+  //container
+
+  let container = document.createElement("div");
+  container.classList.add("container");
+  //product Name
+  let name = document.createElement("h5");
+  name.classList.add("product-name");
+  name.innerText = i.productName.toUpperCase();
+  container.appendChild(name);
+  //price
+  let price = document.createElement("h6");
+  price.innerText = "$" + i.price;
+  container.appendChild(price);
+  //desc
+  let desc = document.createElement("p");
+  desc.classList.add("description");
+  desc.innerText = i.desc;
+  container.appendChild(desc);
+  //apppendchild
+  card.appendChild(container);
+  document.getElementById("products").appendChild(card);
+}
