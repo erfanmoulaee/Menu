@@ -2,7 +2,7 @@ let products = {
   data: [
     {
       productName: "Buttermilk Pancakes",
-      category: "Breakefast",
+      category: "Breakfast",
       price: "15.99",
       image: "./image/item-1.jpeg",
       desc: "I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed",
@@ -23,7 +23,7 @@ let products = {
     },
     {
       productName: "Country Delight",
-      category: "Breakefast",
+      category: "Breakfast",
       price: "20.99",
       image: "./image/item-4.jpeg",
       desc: "Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut,",
@@ -76,7 +76,7 @@ let products = {
 for (let i of products.data) {
   //create card
   let card = document.createElement("div");
-  card.classList.add("card", i.category);
+  card.classList.add("card", i.category, "hide");
   // image div
   let imgContainer = document.createElement("div");
   imgContainer.classList.add("img-container");
@@ -107,10 +107,9 @@ for (let i of products.data) {
   card.appendChild(container);
   document.getElementById("products").appendChild(card);
 }
-
 //parameter passed from button (Parameter same as category)
 function filterProduct(value) {
-  //button class code
+  //Button class code
   let buttons = document.querySelectorAll(".button-value");
   buttons.forEach((button) => {
     //check if value equals innerText
@@ -120,4 +119,27 @@ function filterProduct(value) {
       button.classList.remove("active");
     }
   });
+
+  //select all cards
+  let elements = document.querySelectorAll(".card");
+  //loop through all cards
+  elements.forEach((element) => {
+    //display all cards on 'all' button click
+    if (value == "all") {
+      element.classList.remove("hide");
+    } else {
+      //Check if element contains category class
+      if (element.classList.contains(value)) {
+        //display element based on category
+        element.classList.remove("hide");
+      } else {
+        //hide other elements
+        element.classList.add("hide");
+      }
+    }
+  });
 }
+
+window.onload = () => {
+  filterProduct("all");
+};

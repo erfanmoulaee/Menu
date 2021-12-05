@@ -46,6 +46,7 @@ body {
   color: #c59d5f;
   cursor: pointer;
 }
+
 .active {
   background-color: #c59d5f;
   color: white;
@@ -108,4 +109,7 @@ body {
   font-size: 1rem;
   color: #617d98;
   padding-top: 15px;
+}
+.hide {
+  display: none;
 }
