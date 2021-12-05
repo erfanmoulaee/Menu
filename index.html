@@ -14,11 +14,19 @@
         <div id="underline"></div>
       </div>
       <div id="buttons">
-        <button class="button-value">All</button>
-        <button class="button-value">Breakefast</button>
-        <button class="button-value">Lunch</button>
-        <button class="button-value">Shakes</button>
-        <button class="button-value">Dinner</button>
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+        <button class="button-value" onclick="filterProduct('Breakefast')">
+          Breakefast
+        </button>
+        <button class="button-value" onclick="filterProduct('Lunch')">
+          Lunch
+        </button>
+        <button class="button-value" onclick="filterProduct('Shakes')">
+          Shakes
+        </button>
+        <button class="button-value" onclick="filterProduct('Dinner')">
+          Dinner
+        </button>
       </div>
       <div id="products"></div>
     </div>

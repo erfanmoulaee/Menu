@@ -107,3 +107,17 @@ for (let i of products.data) {
   card.appendChild(container);
   document.getElementById("products").appendChild(card);
 }
+
+//parameter passed from button (Parameter same as category)
+function filterProduct(value) {
+  //button class code
+  let buttons = document.querySelectorAll(".button-value");
+  buttons.forEach((button) => {
+    //check if value equals innerText
+    if (value.toUpperCase() == button.innerText.toUpperCase()) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
+}
