@@ -89,21 +89,27 @@ for (let i of products.data) {
 
   let container = document.createElement("div");
   container.classList.add("container");
+  let contianerHeader = document.createElement("div");
+  contianerHeader.classList.add("container-header");
   //product Name
   let name = document.createElement("h5");
   name.classList.add("product-name");
   name.innerText = i.productName.toUpperCase();
-  container.appendChild(name);
+  contianerHeader.appendChild(name);
   //price
   let price = document.createElement("h6");
   price.innerText = "$" + i.price;
-  container.appendChild(price);
+  contianerHeader.appendChild(price);
   //desc
+  let contianerFooter = document.createElement("div");
+  contianerFooter.classList.add("container-footer");
   let desc = document.createElement("p");
   desc.classList.add("description");
   desc.innerText = i.desc;
-  container.appendChild(desc);
+  contianerFooter.appendChild(desc);
   //apppendchild
+  container.appendChild(contianerHeader);
+  container.appendChild(contianerFooter);
   card.appendChild(container);
   document.getElementById("products").appendChild(card);
 }
